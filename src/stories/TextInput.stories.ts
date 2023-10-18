@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '@lib/components';
+import { TextInput } from '@lib/components';
 
-const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
-  component: Button,
+const meta: Meta<typeof TextInput> = {
+  title: 'Components/TextInput',
+  component: TextInput,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    children: { description: 'Component content' },
+    placeholder: { description: 'Placeholder' },
   },
 };
 
@@ -20,13 +20,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'Click me',
+    placeholder: 'Default text field',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: 'Click me',
+    placeholder: 'Disabled text field',
     disabled: true,
   },
 };
