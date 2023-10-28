@@ -1,12 +1,11 @@
-import { DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
+import { ButtonProps } from './types';
+import useStyle from './useStyles';
 
-import classes from './index.module.scss';
+const Button = (props: ButtonProps) => {
+  const { children, css, ...remains } = props;
+  const { root } = useStyle(props);
 
-const Button = (props: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>) => {
-  const { children, className = '', ...remains } = props;
-  const rootClass = `${classes.root} ${className}`;
-
-  return <button className={rootClass} {...remains}>{children}</button>;
+  return <button css={[root, css]} {...remains}>{children}</button>;
 };
 
 export default Button;

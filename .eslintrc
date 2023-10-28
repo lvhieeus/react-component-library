@@ -23,14 +23,26 @@
     "tsconfigRootDir": ".",
     "sourceType": "module"
   },
-  "plugins": ["react-refresh"],
+  "plugins": ["react-refresh", "@emotion"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "react-refresh/only-export-components": ["warn", {
       "allowConstantExport": true
     }],
     "comma-dangle": ["error", "always-multiline"],
     "no-multiple-empty-lines": ["error", { "max": 1 }],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    // Emotion
+    "@emotion/pkg-renaming": "error",
+    // "@emotion/jsx-import": "error",
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/styled-import": "error"
   }
 }
