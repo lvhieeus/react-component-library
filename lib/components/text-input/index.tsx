@@ -1,12 +1,11 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import { TextInputProps } from './types';
+import useStyles from './useStyles';
 
-import classes from './index.module.scss';
+const TextInput = (props: TextInputProps) => {
+  const { css, ...remains } = props;
+  const { root } = useStyles();
 
-const TextInput = (props: DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) => {
-  const { className = '', ...remains } = props;
-  const rootClass = `${classes.root} ${className}`;
-
-  return <input className={rootClass} {...remains} />;
+  return <input css={[root, css]} {...remains} />;
 };
 
 export default TextInput;
