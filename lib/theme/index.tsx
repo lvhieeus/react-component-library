@@ -2,20 +2,46 @@
 import { ReactNode } from 'react';
 import { ThemeProvider as EmotionThemeProvider, useTheme as useEmotionTheme } from '@emotion/react';
 
+interface ColorPalette {
+  50: string;
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+  800: string;
+  900: string;
+}
+
 export interface Theme {
   colors: {
-    primary: string;
     black: string;
     white: string;
-    gray100: string;
-    gray200: string;
-    gray500: string;
-  },
+    gray: ColorPalette;
+  };
   spacings: {
+    xs: string;
     sm: string;
     md: string;
     lg: string;
-  },
+    xl: string;
+  };
+  radii: {
+    sm: string;
+    md: string;
+    lg: string;
+  };
+  font: {
+    sizes: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+  };
 }
 
 interface ThemeProviderProps {
@@ -25,17 +51,41 @@ interface ThemeProviderProps {
 
 export const defaultTheme: Theme = {
   colors: {
-    primary: '#0081d6',
     black: '#000000',
-    white: '#ffffff',
-    gray100: '#edf2f7',
-    gray200: '#e2e8f0',
-    gray500: '#718096',
+    white: '#FFFFFF',
+    gray: {
+      50: '#F7FAFC',
+      100: '#EDF2F7',
+      200: '#E2E8F0',
+      300: '#CBD5E0',
+      400: '#A0AEC0',
+      500: '#718096',
+      600: '#4A5568',
+      700: '#2D3748',
+      800: '#1A202C',
+      900: '#171923',
+    },
   },
   spacings: {
+    xs: '2px',
     sm: '4px',
     md: '8px',
     lg: '16px',
+    xl: '24px',
+  },
+  radii: {
+    sm: '4px',
+    md: '8px',
+    lg: '12px',
+  },
+  font: {
+    sizes: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      md: '1rem',
+      lg: '1.25rem',
+      xl: '1.5rem',
+    },
   },
 };
 

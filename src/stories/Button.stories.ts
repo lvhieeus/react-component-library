@@ -18,15 +18,33 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Contained: Story = {
   args: {
     children: 'Click me',
+    variant: 'contained',
   },
 };
 
-export const Disabled: Story = {
+export const Outlined: Story = {
+  args: {
+    children: 'Click me',
+    variant: 'outlined',
+  },
+};
+
+export const DisabledContained: Story = {
   args: {
     children: 'Click me',
     disabled: true,
   },
 };
+DisabledContained.storyName ='Disabled (Contained variant)';
+
+export const DisabledOutlined: Story = {
+  args: {
+    children: 'Click me',
+    variant: 'outlined',
+    disabled: true,
+  },
+};
+DisabledOutlined.storyName ='Disabled (Outlined variant)';

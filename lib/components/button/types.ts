@@ -4,5 +4,4 @@ export type ButtonVariant = 'contained' | 'outlined'
 
 export type ButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
   variant?: ButtonVariant;
-  isPrimary?: boolean;
 };

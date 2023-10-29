@@ -4,24 +4,35 @@ import { useTheme } from '@lib/theme';
 import { ButtonProps } from './types';
 
 export default function useStyles(props: ButtonProps): ComponentStyles {
-  const { variant = 'contained', isPrimary } = props;
-  const { spacings, colors } = useTheme();
-
-  const backgroundColor = isPrimary ? colors.primary : colors.gray200;
-  const textColor = isPrimary ? colors.white : colors.black;
+  const { variant = 'contained' } = props;
+  const { spacings, colors, radii } = useTheme();
 
   return {
     root: css({
       cursor: 'pointer',
-      padding: `${spacings.sm} ${spacings.md}`,
-      backgroundColor: variant === 'contained' ? backgroundColor : 'transparent',
-      borderColor: backgroundColor,
-      borderRadius: spacings.sm,
-      color: textColor,
+      padding: `${spacings.md} ${spacings.lg}`,
+      backgroundColor: variant === 'contained' ? colors.gray[200] : 'transparent',
+      borderColor: colors.gray[200],
+      borderRadius: radii.sm,
+      borderStyle: 'solid',
+      borderWidth: 1,
+      color: colors.black,
+
+      ':hover': {
+        backgroundColor: colors.gray[300],
+        borderColor: colors.gray[300],
+      },
+
+      ':active': {
+        backgroundColor: colors.gray[400],
+        borderColor: colors.gray[400],
+      },
+
       ':disabled': {
         pointerEvents: 'none',
-        backgroundColor: colors.gray100,
-        color: colors.gray500,
+        backgroundColor: variant === 'contained' ? colors.gray[100] : 'transparent',
+        borderColor: colors.gray[100],
+        color: colors.gray[500],
       },
     }),
   };
