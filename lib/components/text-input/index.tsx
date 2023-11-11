@@ -1,11 +1,9 @@
 import { TextInputProps } from './types';
-import useStyles from './useStyles';
+import useStyles from './use-styles';
 
-const TextInput = (props: TextInputProps) => {
+export const TextInput = (props: TextInputProps) => {
   const { css, ...remains } = props;
   const { root } = useStyles();
 
   return <input css={[root, css]} {...remains} />;
 };
-
-export default TextInput;

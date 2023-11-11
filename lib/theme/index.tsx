@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { ReactNode } from 'react';
-import { ThemeProvider as EmotionThemeProvider, useTheme as useEmotionTheme } from '@emotion/react';
+import { Interpolation } from '@emotion/serialize';
+import { ThemeProvider as EmotionThemeProvider, useTheme as useEmotionTheme, Theme as EmotionTheme } from '@emotion/react';
 
 interface ColorPalette {
   50: string;
@@ -15,7 +16,9 @@ interface ColorPalette {
   900: string;
 }
 
-export interface Theme {
+export type CssInterpolation = Interpolation<EmotionTheme>;
+
+export interface Theme extends EmotionTheme {
   colors: {
     black: string;
     white: string;
