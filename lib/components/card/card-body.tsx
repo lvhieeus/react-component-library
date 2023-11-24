@@ -1,7 +1,8 @@
-import { CardBodyProps } from './types';
+import { GeneralPropsWithChildren } from '@lib/types';
+
 import useStyles from './card-body.use-styles';
 
-export const CardBody = (props: CardBodyProps) => {
+export const CardBody = (props: GeneralPropsWithChildren) => {
   const { children, css, ...remains } = props;
   const { root } = useStyles();
 

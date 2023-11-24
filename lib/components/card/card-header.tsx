@@ -1,7 +1,8 @@
-import { CardHeaderProps } from './types';
+import { GeneralPropsWithChildren } from '@lib/types';
+
 import useStyles from './card-header.use-styles';
 
-export const CardHeader = (props: CardHeaderProps) => {
+export const CardHeader = (props: GeneralPropsWithChildren) => {
   const { children, css, ...remains } = props;
   const { root } = useStyles();
 

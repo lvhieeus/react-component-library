@@ -1,26 +1,7 @@
-import { ReactNode } from 'react';
-
-import { CssInterpolation } from '@lib/theme';
+import { GeneralPropsWithChildren } from '@lib/types';
 
 export type CardVariant = 'raised' | 'outlined';
 
-export interface CardProps {
-  children?: ReactNode;
+export interface CardProps extends GeneralPropsWithChildren {
   variant?: CardVariant;
-  css?: CssInterpolation;
-}
-
-export interface CardHeaderProps {
-  children?: ReactNode;
-  css?: CssInterpolation;
-}
-
-export interface CardBodyProps {
-  children?: ReactNode;
-  css?: CssInterpolation;
-}
-
-export interface CardFooterProps {
-  children?: ReactNode;
-  css?: CssInterpolation;
 }
