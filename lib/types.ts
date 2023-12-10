@@ -10,3 +10,9 @@ export interface GeneralProps {
 export interface GeneralPropsWithChildren extends GeneralProps {
   children?: ReactNode;
 }
+
+export interface IconGeneralProps {
+  width?: number;
+  height?: number;
+  fill?: string;
+}

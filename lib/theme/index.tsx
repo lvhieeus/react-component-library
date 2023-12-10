@@ -45,6 +45,9 @@ export interface Theme extends EmotionTheme {
       xl: string;
     };
   };
+  zIndices: {
+    popUp: number;
+  };
 }
 
 interface ThemeProviderProps {
@@ -89,6 +92,9 @@ export const defaultTheme: Theme = {
       lg: '1.25rem',
       xl: '1.5rem',
     },
+  },
+  zIndices: {
+    popUp: 1000,
   },
 };
 

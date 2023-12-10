@@ -43,6 +43,10 @@
     // "@emotion/jsx-import": "error",
     "@emotion/no-vanilla": "error",
     "@emotion/import-from-emotion": "error",
-    "@emotion/styled-import": "error"
+    "@emotion/styled-import": "error",
+    "@typescript-eslint/no-confusing-void-expression": ["error", {
+      "ignoreArrowShorthand": true,
+      "ignoreVoidOperator": true
+    }]
   }
 }
